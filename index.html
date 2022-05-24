@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>명현</title>
+    <style>
+      body {
+        height: 100vh;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+      }
+      button {
+        font-size: 20px;
+        width: 180px;
+        height: 50px;
+        background-color: #fff;
+        color: yellowgreen;
+        border: 1px solid yellowgreen;
+        border-radius: 40px;
+        box-shadow: 1px 1px 10px #fff, 1px 1px 20px lightgoldenrodyellow, 1px 1px 30px lightgoldenrodyellow;
+        cursor: pointer;
+        transition: all 0.2s;
+      }
+      button::after {
+        content: '';
+        width: inherit;
+        height: inherit;
+        background-color: #fff;
+        color: yellowgreen;
+        border: 1px solid yellowgreen;
+        border-radius: 40px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        transition: all 0.4s;
+        opacity: 0;
+      }
+      button:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+      }
+      button:hover::after {
+        transform: scaleX(1.4) scaleY(1.6);
+        animation: moveBtn 0.2s;
+        box-shadow: 1px 10px 30px lightgoldenrodyellow;
+      }
+      @keyframes moveBtn {
+        0% {
+          opacity: 0;
+        }
+        50% {
+          opacity: 0.6;
+        }
+        100% {
+          opacity: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <button onclick="bgChange()">Click Me !</button>
+    </div>
+    <script>
+      function bgChange() {
+        a;
+        document.body.style.backgroundColor = `rgba(${Math.ceil(200 + Math.random() * 55)},
+          ${Math.ceil(200 + Math.random() * 55)},
+          ${Math.ceil(200 + Math.random() * 55)})
+          `;
+      }
+    </script>
+  </body>
+</html>
